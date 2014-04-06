@@ -5,5 +5,6 @@
 
 //Must take in a reference to a vector so it can be modified
 void readInput(std::vector<std::string>& vec);
+void readInput(std::vector<double>& vec);
 
 #endif

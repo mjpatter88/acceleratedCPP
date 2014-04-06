@@ -1,4 +1,4 @@
-all: gradeStructures squares squaresDouble totalInput wordCounts
+all: gradeStructures squares squaresDouble totalInput wordCounts averageInput
 	
 gradeStructures: gradeStructures.o median.o grade.o Student_info.o
 	g++ -o gradeStructures gradeStructures.o median.o grade.o Student_info.o
@@ -33,6 +33,12 @@ totalInput: totalInput.o readIntoVector.o
 totalInput.o: totalInput.cpp readIntoVector.h
 	g++ -c totalInput.cpp
 
+averageInput: averageInput.o readIntoVector.o
+	g++ -o averageInput averageInput.o readIntoVector.o
+
+averageInput.o: averageInput.cpp readIntoVector.h
+	g++ -c averageInput.cpp
+
 readIntoVector.o: readIntoVector.cpp readIntoVector.h
 	g++ -c readIntoVector.cpp
 
@@ -48,4 +54,5 @@ clean:
 	rm -f squares
 	rm -f squaresDouble
 	rm -f totalInput
+	rm -f averageInput
 	rm -f wordCounts
