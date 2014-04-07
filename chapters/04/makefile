@@ -1,5 +1,8 @@
-all: gradeStructures squares squaresDouble totalInput wordCounts averageInput
+all: gradeStructures squares squaresDouble totalInput wordCounts averageInput gradeIncremental
 	
+gradeIncremental: gradeIncremental.o median.o grade.o Student_info.o
+	g++ -o gradeIncremental gradeIncremental.o median.o grade.o Student_info.o
+
 gradeStructures: gradeStructures.o median.o grade.o Student_info.o
 	g++ -o gradeStructures gradeStructures.o median.o grade.o Student_info.o
 
@@ -51,6 +54,7 @@ wordCounts.o: wordCounts.cpp readIntoVector.h
 clean:
 	rm -f *.o
 	rm -f gradeStructures
+	rm -f gradeIncremental
 	rm -f squares
 	rm -f squaresDouble
 	rm -f totalInput
