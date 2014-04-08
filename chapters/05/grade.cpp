@@ -13,3 +13,8 @@ double grade(double midterm, double fin, double homework)
     return 0.2 * midterm + 0.4 * fin + 0.4 * homework;
 }
 
+// Determine if a student failed or not.
+bool failed(const Student_info& s)
+{
+    return s.grade < 60;
+}
